@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-// A circular cesarcyper-like algorithm to encrypt-decrypt phrases. (pls use SHA-256 instead ;D)
+// A circular cesarcyper-like(alphabet shifting and order changing) algorithm to encrypt-decrypt phrases. (pls use SHA-256 instead ;D)
 
 void printFullString(char* str){
   for(int i=0; str[i]!='\0'; i++){
