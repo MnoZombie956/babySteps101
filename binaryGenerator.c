@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define NUM_DIGITS 8
+#define NUM_DIGITS 8 // How many bits you are going to generate. [0,2^n[
 //cuidado para nao  estourar o console do gdb
 int all1(int *num){
     for(int i=0;i<NUM_DIGITS;i++){
