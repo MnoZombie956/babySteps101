@@ -1,3 +1,5 @@
+// A program capable of calculating the factorial of really big numbers, such as DezMil(Ten thousand)
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
