@@ -1,3 +1,5 @@
+// A Binary KnapSack(0-1) problem brute force solver 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
