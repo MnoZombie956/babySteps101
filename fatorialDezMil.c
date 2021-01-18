@@ -1,4 +1,4 @@
-// A program capable of calculating the factorial of really big numbers, such as DezMil(Ten thousand)
+// A program capable of calculating the factorial of really big numbers(till 35661 characters), such as DezMil(Ten thousand)
 
 #include <stdio.h>
 #include <stdlib.h>
