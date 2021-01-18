@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+// A circular cesarcyper-like algorithm to encrypt-decrypt phrases. (pls use SHA-256 instead ;D)
 
 void printFullString(char* str){
   for(int i=0; str[i]!='\0'; i++){
@@ -88,10 +89,12 @@ void decodeThis(char* buffer){
 //    printFullString(buffer);
 //    printf("\n\n");
   }
+// ENCRYPTED TO UNENCRYPTED EXAMPLE TEXTS:
 //rglfil#drwF#w#udvdgrsdhvkqdi#hpohxhwrpfhp#dudgilvhg#t#qhv#lfhw#u#d#hqhs#r#vhahhgf#uidu#D ->
 //A cifra de Cesar pode ser facilmente decifrada mesmo que se tenha apenas o texto cifrado
 //VR#RLOUYPD -> AMO LIVROS
 }
+
 // OPERACOES REALIZADAS
 /*Encriptar, objetivo eh fazer o contrario
 
@@ -107,6 +110,7 @@ void decodeThis(char* buffer){
   , o 5nt par com o n-4 e assim por diante (o meio permanece o msm caso o numero
   de pares for par e é trocado caso seja impar)
 */
+
 int main () {
   printf("Digite o nome do arquivo: ");
   //char arch1Name[]="cryptoCode.txt";
