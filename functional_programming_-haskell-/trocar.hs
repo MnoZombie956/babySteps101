@@ -1,7 +1,7 @@
 trocar :: Int -> [Int]
 trocar 0 = []
 trocar valor
-	| valor >= 100 = trocar (valor-100) ++ [100]  
+	| valor >= 100 = trocar (valor-100) ++ [100] -- change the notes as you wish
 	| valor >= 50 = trocar (valor-50) ++ [50] 
 	| valor >= 10 = trocar (valor-10) ++ [10]
 	| valor >= 5 = trocar (valor-5) ++ [5]
