@@ -4,7 +4,7 @@ else False
 
 somaImpares [] = 0 -- lista vazia
 somaImpares (x:lista) 
-    | is_odd x = x + (somaImpares lista)
+    | is_odd x = x + (somaImpares lista) -- just negate for evens
     | otherwise = somaImpares lista
 
 main = do
