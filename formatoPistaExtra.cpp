@@ -12,13 +12,12 @@
 /*
 	Explicação do exercicio para meu eu futuro:
 	Lemos um arquivo com os valores rgb 0-255 de cada linha horizontal de uma imagem:
-	1st linha: n, seguintes linhas: n inteiros; e armazenamos num vetor.
+		1st linha: n, seguintes linhas: n inteiros; e armazenamos num vetor.
 	Geramos uma lista de segmentos, em que os segmentos são os nucleos em que inteiros se repetem, isto é, elementos de imagem da mesma cor.
 	Para cada segmento, existe um segType que indica sua posição na ordem crescente	dos segmentos gerados.
 	Eh criada uma matrix relacionando a qnt de inteiros em cada segmentos e seu segType.
-	Como segundo exercicio, eh dado um padrao para ser procurado na lista de 
-	segmentos que criamos. Caso encontrado o padrao, exibimos onde, na lista de
-	segmentos, ele comeca e acaba em termos de index.
+	Como segundo exercicio, eh dado um padrao para ser procurado na lista de segmentos que criamos. 
+	Caso encontrado o padrao, exibimos onde, na lista de segmentos, ele começa e acaba em termos de index.
 	Apos isto, calculamos quantas vezes cada inteiros de segmentos existem
 	até chegarmos na posicao do arquivo em que eh a mesma que o inteiro do meio
 	do padrao encontrado(transcrevemos seu ponto meio na lista para o correspondente
