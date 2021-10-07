@@ -1,0 +1,25 @@
+#Original pseudocode
+#Var1 = 2344
+#Enquanto Var1 não for igual a 1:
+#	Se Var1 > 80:
+#		Var1 = Var1 – 2;
+#	Caso contrário se Var1 <= 80:
+#		Var1 = Var1/4;
+#Saia
+
+addi $t1, $t1, 2344 #set t1 2344
+
+loopTop:
+beq $t1, 1, loopBottom   #enquanto t1!=0
+	sgt $t2, $t1, 80     #argumento: t1>80
+	bne $t2, 1, saiIf    #caso falso va para o else em saiIf 
+		subi $t1, $t1, 2 #caso verdade faça t1-=2
+		b loopTop        #como é apenas um if e else if ja pode ir para a proxima iteracao
+	saiIf:
+	sle $t2, $t1, 80     #argumento: t1<=80
+	bne $t2, 1, saiElse  #caso falso sai do else
+		div $t1, $t1, 4  #caso verdade faça t1/=4
+	saiElse:
+	
+	b loopTop
+loopBottom:
