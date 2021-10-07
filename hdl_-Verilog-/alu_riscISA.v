@@ -17,6 +17,21 @@
 	1110 - not - standard - accumulator=NOT pilhas[k][p]                  //bit a bit do byte
 	1111 - comp- standard - #101 = pilhas[k][p] == pilhas[k][p+1] ? (z01:<?(z00:z11))
 */
+module shiftUnit(
+	input shiftDirection,
+	input unsigned [7:0] a,
+	input unsigned [2:0] shiftAmount, // - 1
+	output reg unsigned [7:0] result
+);
+	always@(*)begin
+		if(shiftDirection == 0) begin
+			result = a << shiftAmount + 1;
+		end
+		else if(shiftDirection == 1) begin
+			result = a >> shiftAmount + 1;
+		end
+	end
+endmodule
 module arithmeticUnit(
 	input [7:0] a,b,
 	input [3:0] op,
