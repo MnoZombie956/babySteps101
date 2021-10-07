@@ -1,0 +1,65 @@
+// Original C problematic code
+// int g(int x, int y){
+// 	int a[32] = {1,2,3,4,32,43,12,98}; // a[8] até a[31] = 0
+// 	int i;
+// 	for(i = x; i < y; i++){
+//  		a[i] = i + y;
+//  	}
+//  	return(a[i-1]);
+// }
+// void main(){
+// 	int result = g(31, 34);
+// 
+
+.globl main
+.data
+	a:	.word 1,2,3,4,32,43,12,98,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	prompt1: .asciiz "Aula 5 Laoc: Marco Túlio SM\n"
+	prompt2: .asciiz "Resultado:\n"
+
+.text
+main:
+	la $a0, prompt1 # Load address of stored string
+	li $v0, 4       # Load the syscall value (4 indicates print)
+	syscall         # Perform the specified syscall with a0
+
+	addi  $a0, $zero, 31  
+	addi  $a1, $zero, 34
+	
+	jal Funcao
+	j Exit
+Funcao:
+	sll $t0, $a0, 2 # para mapear index -> mem
+	sll $t1, $a1, 2
+	
+	la $t2, a
+	
+	add $t0, $t2, $t0   # t1 tem o endereço a+x
+	add $t1, $t2, $t1   # s3 tem o final do vetor na memoria
+	add $t2, $a0, $zero # grava index
+Loop:
+	slt $t3,$t0,$t1    # se chegamos ao fim do endereço do vet
+	beqz $t3, Return
+	
+	add  $t3, $t2, $a1 # soma i e y e coloca em t2
+	
+	sw   $t3, 0($t0)   #  em a[i] = t2
+	
+	addi $t0, $t0, 4   # incrementamos o x
+	addi $t2, $t2, 1   # incrementamos o index
+	
+	j Loop
+Return:
+	subi $t0, $t0, 4   # decrementamos x
+	lw $v1, 0($t0)
+
+	la $a0, prompt2 # says: "Resultado:\n"
+		li $v0, 4
+		syscall
+
+	add $a0, $zero, $v1 # says v1 value
+		li $v0, 1
+		syscall
+			
+	jr $ra               
+Exit:
